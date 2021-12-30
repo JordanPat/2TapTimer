@@ -15,7 +15,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
         title='5 s'
         onPress={()=>navigation.navigate('Root', {
           screen: 'TabTwo', 
-          params:{ timeValue: 5, timeUnit: 'seconds' }
+          params:{ isPaused: false, timeValue: 5, timeUnit: 'seconds' }
         })}
       />
       </View>
@@ -26,7 +26,7 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
           onPress={
             ()=>navigation.navigate('Root', {
               screen: 'TabTwo',
-              params: { timeValue: 1, timeUnit: 'minutes' }
+              params: { isPaused: false, timeValue: 1, timeUnit: 'minutes' }
             }
             )
           }
