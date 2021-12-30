@@ -13,20 +13,14 @@ export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'
       <View style={styles.button}>
       <Button 
         title='5 s'
-        onPress={()=>navigation.navigate('TabTwo', {
-          screen: 'TabTwo', 
-          params:{ timeValue: 10, timeUnit: 'seconds' }
-        })}
+        onPress={()=>navigation.navigate('TabTwo',)}
       />
       </View>
       <TextInput style={styles.TextInput} placeholder='Time Value' placeholderTextColor='red'/>
       <View style={styles.button}>
         <Button 
           title='1 m'
-          onPress={()=>navigation.navigate('TabTwo', {
-            screen: 'TabTwo', 
-            params:{ timeValue: 10, timeUnit: 'seconds' }
-          })}
+          onPress={()=>navigation.navigate('TabTwo')}
         />
       </View>
     </View>
