@@ -24,9 +24,15 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> = Nati
   Screen
 >;
 
+enum TimeUnits {
+  seconds,
+  minutes,
+  hours,
+}
+
 export type RootTabParamList = {
   TabOne: undefined;
-  TabTwo: undefined;
+  TabTwo: { timeValue: number, timeUnit: TimeUnits } | undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
