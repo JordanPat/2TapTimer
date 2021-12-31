@@ -4,10 +4,24 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
+import {Picker} from '@react-native-picker/picker';
+import { useState } from 'react';
+
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+  const [selectedLanguage, setSelectedLanguage] = useState<number>();
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Buttons</Text>
+      <Picker
+        selectedValue={selectedLanguage}
+        onValueChange={(itemValue, itemIndex) =>
+          setSelectedLanguage(itemValue)
+        }>
+        <Picker.Item label="Java" value={0} />
+        <Picker.Item label="JavaScript" value={1} />
+      </Picker>
+
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <TextInput style={styles.TextInput} placeholderTextColor='red' value='5 seconds'/>
       <View style={styles.button}>
